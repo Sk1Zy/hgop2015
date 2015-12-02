@@ -4,14 +4,14 @@ echo Cleaning...
 rm -rf ./dist
 
 echo Building app
-grunt
+grunt || exit $?
 
 cp ./Dockerfile ./dist/
 
 cd dist
-npm install --production
+npm install --production || exit $?
 
 echo Building docker image
-docker build -t gulli/tictactoe .
+docker build -t grimurd09/tictactoe . || exit $?
 
 echo "Done"
