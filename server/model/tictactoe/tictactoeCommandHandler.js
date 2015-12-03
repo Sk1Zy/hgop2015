@@ -1,17 +1,33 @@
-var tictactoeState = require('./tictactoeState');
+'use strict';
+
+var _ = require('lodash');
 
 module.exports = function tictactoeCommandHandler(events) {
-  var gameCreatedEvent = events[0];
+  var gameState = {
+    gameCreatedEvent: events[0],
+    board: [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]
+  };
 
   var handlers = {
     "CreateGame": function(cmd) {
       {
-        return tictactoeState.createGame(cmd);
+        return [{
+          id: cmd.id,
+          event: {
+            type: "GameCreated",
+            user: cmd.user,
+          },
+          timeStamp: cmd.timeStamp
+        }];
       }
     },
     "PlayerJoined": function(cmd) {
       {
-        if (gameCreatedEvent === undefined) {
+        if (gameState.gameCreatedEvent === undefined) {
           return [{
             id: cmd.id,
             event: {
@@ -27,7 +43,7 @@ module.exports = function tictactoeCommandHandler(events) {
           event: {
             type: "PlayerJoined",
             user: cmd.user,
-            otherUser: gameCreatedEvent.event.user,
+            otherUser: gameState.gameCreatedEvent.event.user,
           },
           timeStamp: cmd.timeStamp
         }];
