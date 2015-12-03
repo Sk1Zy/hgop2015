@@ -7,12 +7,13 @@ module.exports = function() {
     createGame: function(command) {
       // If there is already a game with this ID.
       if(games[command.id]) {
-        return {
+        return [{
           id: command.id,
+          timeStamp: "2015.12.02T10:29:44",
           event: {
             type: "GameAlreadyExists"
           }
-        }
+        }]
       }
 
       games[command.id] = {

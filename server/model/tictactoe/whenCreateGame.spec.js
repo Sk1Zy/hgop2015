@@ -51,6 +51,30 @@ describe('create game command', function() {
 
     JSON.stringify(results).should.be.exactly(JSON.stringify(expected));
   });
+
+  it('should not create game if game with id exists', function() {
+    evt = [];
+    command = {
+      id: "12347",
+      comm: "CreateGame",
+      user: "Halli",
+      name: "TheFirstGame",
+      timeStamp: "2015.12.02T10:29:44"
+    };
+
+    expected = [{
+      id: "12347",
+      timeStamp: "2015.12.02T10:29:44",
+      event: {
+        type: "GameAlreadyExists"
+      }
+    }];
+
+    tictactoeCommandHandler(evt).executeCommand(command)
+    var results = tictactoeCommandHandler(evt).executeCommand(command);
+
+    JSON.stringify(results).should.be.exactly(JSON.stringify(expected));
+  })
 });
 
 
