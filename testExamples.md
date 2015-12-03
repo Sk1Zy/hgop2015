@@ -12,16 +12,6 @@
         }
     }
 
-#### GameAlreadyExists
-
-    {
-        "id": 1,
-        "event": {
-            "type": "GameAlreadyExists"
-        }
-    }
-
-
 #### PlayerJoined
 
     {
