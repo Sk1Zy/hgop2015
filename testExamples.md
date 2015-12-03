@@ -6,10 +6,18 @@
 
     {
         "gameId": 1,
-        "user": "grimur",
         "event": {
             "type": "GameCreated",
             "player": "grimur"
+        }
+    }
+
+#### GameAlreadyExists
+
+    {
+        "id": 1,
+        "event": {
+            "type": "GameAlreadyExists"
         }
     }
 
@@ -18,7 +26,6 @@
 
     {
         "gameId": 1,
-        "user": "pc",
         "event": {
             "type": "PlayerJoined",
             "player": "pc"
@@ -29,7 +36,6 @@
 
     {
         "gameId": 1,
-        "user": "grimur",
         "event": {
             "type": "GameStarted",
             "playerOne": "grimur",
@@ -37,11 +43,19 @@
         }
     }
 
+#### GameEnded
+
+    {
+        "gameId": 1,
+        "event": {
+            "type": "GameEnded",
+        }
+    }
+
 #### PlayerLeft
 
     {
         "gameId": 1,
-        "user": "pc",
         "event": {
             "type": "PlayerLeft",
             "player": "pc"
@@ -52,7 +66,6 @@
 
     {
         "gameId": 1,
-        "user": "pc",
         "event": {
             "type": "PlayerPlacedIllegalMove",
             "coordinates": [0,2]
@@ -63,7 +76,6 @@
 
     {
         "gameId": 1,
-        "user": "grimur",
         "event": {
             "type": "PlayerPlacedMove",
             "coordinates": [1, 2]
@@ -74,41 +86,17 @@
 
     {
         gameId: 1,
-        "user": "grimur",
         "event": {
             "type": "GameDraw"
         }
     }
 
-#### PlayerWonHorizontal
+#### PlayerWon
 
     {
         gameId: 1,
-        "user": "grimur",
         "event": {
             "type": "PlayerWonHorizontal",
             "player": "grimur"
-        }
-    }
-
-#### PlayerWonVertical
-
-    {
-        gameId: 1,
-        "user": "pc",
-        "event": {
-            "type": "PlayerWonVertical",
-            "player": "pc"
-        }
-    }
-
-#### PlayerWonDiagonal
-
-    {
-        gameId: 1,
-        "user": "grimur",
-        "event": {
-            "type": "PlayerWonDiagonal",
-            "player": "pc"
         }
     }
