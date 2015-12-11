@@ -58,6 +58,7 @@ module.exports = function tictactoeCommandHandler(events) {
       {
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "GameCreated",
             user: cmd.user,
@@ -71,6 +72,7 @@ module.exports = function tictactoeCommandHandler(events) {
         if (gameState.gameCreatedEvent === undefined) {
           return [{
             id: cmd.id,
+            gameId: cmd.gameId,
             event: {
               type: "GameDoesNotExist",
               user: cmd.user,
@@ -81,6 +83,7 @@ module.exports = function tictactoeCommandHandler(events) {
 
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "PlayerJoined",
             user: cmd.user,
@@ -94,6 +97,7 @@ module.exports = function tictactoeCommandHandler(events) {
       if(gameState.board[cmd.x][cmd.y]) {
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "PlayerPlacedIllegalMove",
             coordinates: {
@@ -113,6 +117,7 @@ module.exports = function tictactoeCommandHandler(events) {
 
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "PlayerWon",
             user: cmd.user
@@ -120,6 +125,7 @@ module.exports = function tictactoeCommandHandler(events) {
           timeStamp: cmd.timeStamp
         }, {
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "GameEnded"
           },
@@ -130,12 +136,14 @@ module.exports = function tictactoeCommandHandler(events) {
       if(gameState.isDraw()) {
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "GameDraw"
           },
           timeStamp: cmd.timeStamp
         }, {
           id: cmd.id,
+          gameId: cmd.gameId,
           event: {
             type: "GameEnded"
           },
@@ -145,6 +153,7 @@ module.exports = function tictactoeCommandHandler(events) {
 
       return [{
         id: cmd.id,
+        gameId: cmd.gameId,
         event: {
           type: "PlayerPlacedMove",
           coordinates: {

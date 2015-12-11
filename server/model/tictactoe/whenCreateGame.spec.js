@@ -7,6 +7,7 @@ describe('create game command', function() {
     evt = [];
     command = {
       id: "1234",
+      gameId: "999",
       comm: "CreateGame",
       user: "Gulli",
       name: "TheFirstGame",
@@ -15,6 +16,7 @@ describe('create game command', function() {
 
     expected = [{
       id: "1234",
+      gameId: "999",
       event: {
         type: "GameCreated",
         user: "Gulli",
@@ -23,7 +25,7 @@ describe('create game command', function() {
     }];
 
     var results = tictactoeCommandHandler(evt).executeCommand(command);
-
+    console.log(results);
     JSON.stringify(results).should.be.exactly(JSON.stringify(expected));
   });
 
@@ -32,6 +34,7 @@ describe('create game command', function() {
     command = {
       id: "12347",
       comm: "CreateGame",
+      gameId: "998",
       user: "Halli",
       name: "TheFirstGame",
       timeStamp: "2015.12.02T10:29:44"
@@ -39,6 +42,7 @@ describe('create game command', function() {
 
     expected = [{
       id: "12347",
+      gameId: "998",
       event: {
         type: "GameCreated",
         user: "Halli",
@@ -60,6 +64,7 @@ describe('join game command', function() {
   it('should join game', function() {
     evt = [{
       id: "1234",
+      gameId: "997",
       event: {
         type: "GameCreated",
         user: "Gulli",
@@ -69,6 +74,7 @@ describe('join game command', function() {
 
     command = {
       id: "12345",
+      gameId: "997",
       comm: "PlayerJoined",
       user: "Halli",
       name: "TheFirstGame",
@@ -77,6 +83,7 @@ describe('join game command', function() {
 
     expected = [{
       id: "12345",
+      gameId: "997",
       event: {
         type: "PlayerJoined",
         user: "Halli",
@@ -95,6 +102,7 @@ describe('join game command', function() {
 
     command = {
       id: "12345",
+      gameId: "996",
       comm: "PlayerJoined",
       user: "Halli",
       name: "TheFirstGame",
@@ -103,6 +111,7 @@ describe('join game command', function() {
 
     expected = [{
       id: "12345",
+      gameId: "996",
       event: {
         type: "GameDoesNotExist",
         user: "Halli",
