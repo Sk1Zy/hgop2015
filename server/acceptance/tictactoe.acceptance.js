@@ -43,7 +43,7 @@ describe('TEST ENV GET /api/gameHistory', function () {
                 "gameId": "100000",
                 "event": {
                   "type": "GameCreated",
-                }
+                },
                 "user": "Gulli",
                 "timeStamp": "2014-12-02T11:29:29"
               }]);
