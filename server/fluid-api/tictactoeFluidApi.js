@@ -23,7 +23,10 @@ function given(userApi) {
       return expectApi;
     },
     expect: function(name) {
-      expect[start].event = name;
+      expected[start].event = {
+      	type: name,
+	user: userApi.cmd.user
+      }
 
       return expectApi;
     },
@@ -61,7 +64,7 @@ function given(userApi) {
 function userApi(username) {
   var user = {
     cmd: {},
-    createsGame: function(gameId) {
+    createGame: function(gameId) {
       user.cmd = {
         id: "1234",
         gameId: gameId,
