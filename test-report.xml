@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<testsuite name="Firefox 37.0.0 (Mac OS X 10.11.0)" package="" timestamp="2015-12-11T16:35:18" id="0" hostname="Sigurbjorgs-MacBook-Air.local" tests="1" errors="0" failures="0" time="0.064">
+<testsuite name="Firefox 37.0.0 (Mac OS X 10.11.0)" package="" timestamp="2015-12-13T15:08:51" id="0" hostname="Sigurbjorgs-MacBook-Air.local" tests="1" errors="0" failures="0" time="0.069">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:37.0) Gecko/20100101 Firefox/37.0"/>
   </properties>
-  <testcase name="should attach a list of things to the scope" time="0.064" classname="Controller: MainCtrl"/>
+  <testcase name="should attach a list of things to the scope" time="0.069" classname="Controller: MainCtrl"/>
   <system-out>
     <![CDATA[
 ]]>

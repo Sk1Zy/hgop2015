@@ -8,10 +8,10 @@ var acceptanceUrl = process.env.ACCEPTANCE_URL;
 describe('TEST ENV GET /api/gameHistory', function () {
 
   it('Should have ACCEPTANCE_URL environment variable exported.', function () {
-    acceptanceUrl.should.be.ok;
+    acceptanceUrl.should.be.ok();
   });
 
-  it('should execute same test using old style', function () {
+  it('should execute same test using old style', function (done) {
 
     var command =     {
       id : "1234",
