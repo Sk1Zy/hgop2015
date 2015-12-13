@@ -54,11 +54,7 @@ describe('TEST ENV GET /api/gameHistory', function () {
 
 
    it('Should execute fluid API test', function (done) {
-     /*
-     given(user("YourUser").createsGame("TheFirstGame"))
-     .expect("GameCreated").withName("TheFirstGame").isOk(done);
-      */
-     done();
+     given(user("Grimur").createGame("12434")).expect("GameCreated").isOk(done);
    });
 
 });
