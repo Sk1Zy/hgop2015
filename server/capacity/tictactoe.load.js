@@ -9,9 +9,7 @@ it('Should play 1000 games in x seconds.', function(done) {
   this.timeout(x * 1000);
 
   var QED = function() {
-    ++doneCount;
-    console.log(doneCount);
-    if (gamesToPlay === doneCount) {
+    if (gamesToPlay === ++doneCount) {
       done();
     }
   };
