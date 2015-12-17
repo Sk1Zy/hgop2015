@@ -110,8 +110,6 @@ module.exports = function tictactoeCommandHandler(events) {
         }]
       }
 
-      // Hmm, detecta að sami spilari sé að gera 2x?
-
       gameState.board[cmd.x][cmd.y] = cmd.side;
       if(gameState.isOver()) {
 

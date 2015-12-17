@@ -25,7 +25,6 @@ describe('create game command', function() {
     }];
 
     var results = tictactoeCommandHandler(evt).executeCommand(command);
-    console.log(results);
     JSON.stringify(results).should.be.exactly(JSON.stringify(expected));
   });
 

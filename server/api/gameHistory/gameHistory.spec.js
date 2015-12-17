@@ -16,19 +16,24 @@ describe('GET /api/gameHistory', function() {
       timeStamp: "2014-12-02T11:29:29"
     };
 
-    var req = request(app);
-    req
+    request(app)
       .post('/api/createGame')
       .type('json')
       .send(command)
       .end(function(err, res) {
-        if (err) return done(err);
+        if (err) {
+          return done(err);
+        }
+
         request(app)
           .get('/api/gameHistory/999')
           .expect(200)
           .expect('Content-Type', /json/)
           .end(function(err, res) {
-            if (err) return done(err);
+            if (err) {
+              return done(err);
+            }
+            
             res.body.should.be.instanceof(Array);
             should(res.body).eql(
               [{

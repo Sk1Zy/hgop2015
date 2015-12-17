@@ -2,9 +2,10 @@
 [0m[0m
 [0m  TEST ENV GET /api/gameHistory[0m
 [2K[0G  [32m  ✓[0m[90m Should have ACCEPTANCE_URL environment variable exported. [0m
-[2K[0G  [32m  ✓[0m[90m should execute same test using old style [0m[33m(50ms)[0m
-[2K[0G  [32m  ✓[0m[90m Should execute fluid API test [0m
+[2K[0G  [32m  ✓[0m[90m should execute same test using old style [0m[31m(196ms)[0m
+[2K[0G  [32m  ✓[0m[90m Should  [0m[31m(194ms)[0m
+[2K[0G  [32m  ✓[0m[90m Game should result in a draw [0m[31m(205ms)[0m
 
 
-[92m [0m[32m 3 passing[0m[90m (70ms)[0m
+[92m [0m[32m 4 passing[0m[90m (608ms)[0m
 
