@@ -11,6 +11,7 @@ module.exports = function(eventStore, commandHandler) {
         try {
           events = commandHandler(eventStream).executeCommand(cmd);
         } catch (e) {
+          console.log('catch', e, e.stack)
           defer.reject(e);
         }
 

@@ -12,21 +12,32 @@ module.exports = function tictactoeCommandHandler(events) {
     ],
     isOver: function() {
       var self = this;
+      console.log(self.board[0])
+      console.log(self.board[1])
+      console.log(self.board[2])
       if(self.board[0][0] === self.board[1][1] &&  self.board[1][1] === self.board[2][2]) {
-        return true;
+        if(self.board[0][0]) {
+          return true;
+        }
       }
 
       if(self.board[0][2] === self.board[1][1] && self.board[1][1] === self.board[2][0]) {
-        return true;
+        if(self.board[0][2]) {
+          return true;
+        }
       }
 
       for(var i = 0; i < self.board.length; ++i) {
         if(self.board[i][0] === self.board[i][1] && self.board[i][1] === self.board[i][2]) {
-          return true;
+          if(self.board[i][0]) {
+            return true;
+          }
         }
 
         if(self.board[0][i] === self.board[1][i] && self.board[1][i] === self.board[2][i]) {
-          return true;
+          if(self.board[0][i]) {
+            return true;
+          }
         }
       }
 
@@ -49,7 +60,7 @@ module.exports = function tictactoeCommandHandler(events) {
 
   _.forEach(events, function(event) {
     if(event.event.type === "PlayerPlacedMove") {
-      gameState.board[event.event.x][event.event.y] = event.event.side;
+      gameState.board[event.event.coordinates.x][event.event.coordinates.y] = event.event.side;
     }
   })
 
@@ -104,6 +115,7 @@ module.exports = function tictactoeCommandHandler(events) {
               x: cmd.x,
               y: cmd.y
             },
+            side: cmd.side,
             user: cmd.user
           },
           timeStamp: cmd.timeStamp
@@ -112,7 +124,6 @@ module.exports = function tictactoeCommandHandler(events) {
 
       gameState.board[cmd.x][cmd.y] = cmd.side;
       if(gameState.isOver()) {
-
         return [{
           id: cmd.id,
           gameId: cmd.gameId,
@@ -158,6 +169,7 @@ module.exports = function tictactoeCommandHandler(events) {
             x: cmd.x,
             y: cmd.y
           },
+          side: cmd.side,
           user: cmd.user
         },
         timeStamp: cmd.timeStamp

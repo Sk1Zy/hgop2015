@@ -23,9 +23,11 @@ describe('Player placed move command', function() {
       id: 3,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 0
+        },
         side: "O",
-        x: 0,
-        y: 0,
         user: "Gulli"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -33,30 +35,36 @@ describe('Player placed move command', function() {
       id: 4,
       event: {
         type: "PlayerPlacedMove",
-        user: "Grimur",
-        x: 1,
-        y: 0,
-        side: "X"
+        coordinates: {
+          x: 1,
+          y: 0,
+        },
+        side: "X",
+        user: "Grimur"
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 5,
       event: {
         type: "PlayerPlacedMove",
-        user: "Gulli",
+        coordinates: {
+          x: 1,
+          y: 1
+        },
         side: "O",
-        x: 1,
-        y: 1
+        user: "Gulli",
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 6,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 2,
+        },
+        side: "X",
         user: "Grimur",
-        x: 0,
-        y: 2,
-        side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
     }];
@@ -111,9 +119,11 @@ describe('Player placed move command', function() {
       id: 3,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 2
+        },
         side: "O",
-        x: 0,
-        y: 2,
         user: "Gulli"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -121,30 +131,36 @@ describe('Player placed move command', function() {
       id: 4,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 0
+        },
+        side: "X",
         user: "Grimur",
-        x: 0,
-        y: 0,
-        side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 5,
       event: {
         type: "PlayerPlacedMove",
-        user: "Gulli",
+        coordinates: {
+          x: 1,
+          y: 1
+        },
         side: "O",
-        x: 1,
-        y: 1
+        user: "Gulli",
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 6,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 1
+        },
+        side: "X",
         user: "Grimur",
-        x: 0,
-        y: 1,
-        side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
     }];
@@ -199,9 +215,11 @@ describe('Player placed move command', function() {
       id: 3,
       event: {
         type: "PlayerPlacedMove",
+        coordinates: {
+          x: 0,
+          y: 0
+        },
         side: "O",
-        x: 0,
-        y: 0,
         user: "Gulli"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -209,30 +227,36 @@ describe('Player placed move command', function() {
       id: 4,
       event: {
         type: "PlayerPlacedMove",
-        user: "Grimur",
-        x: 1,
-        y: 0,
-        side: "X"
+        coordinates: {
+          x: 1,
+          y: 0
+        },
+        side: "X",
+        user: "Grimur"
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 5,
       event: {
         type: "PlayerPlacedMove",
-        user: "Gulli",
+        coordinates: {
+          x: 0,
+          y: 1
+        },
         side: "O",
-        x: 0,
-        y: 1
+        user: "Gulli"
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
       id: 6,
       event: {
         type: "PlayerPlacedMove",
-        user: "Grimur",
-        x: 1,
-        y: 1,
-        side: "X"
+        coordinates: {
+          x: 1,
+          y: 1
+        },
+        side: "X",
+        user: "Grimur"
       },
       timeStamp: "2015.12.02T12:30:44"
     }];
@@ -288,8 +312,10 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         side: "O",
-        x: 0,
-        y: 0,
+        coordinates: {
+          x: 0,
+          y: 0
+        },
         user: "Gulli"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -298,8 +324,10 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 2,
-        y: 1,
+        coordinates: {
+          x: 2,
+          y: 1
+        },
         side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -309,8 +337,10 @@ describe('Player placed move command', function() {
         type: "PlayerPlacedMove",
         user: "Gulli",
         side: "O",
-        x: 1,
-        y: 0
+        coordinates: {
+          x: 1,
+          y: 0
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -318,9 +348,11 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 1,
-        y: 1,
-        side: "X"
+        side: "X",
+        coordinates: {
+          x: 1,
+          y: 1
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }];
@@ -376,9 +408,11 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         side: "O",
-        x: 0,
-        y: 0,
-        user: "Gulli"
+        user: "Gulli",
+        coordinates: {
+          x: 0,
+          y: 0
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -386,9 +420,11 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 1,
-        y: 1,
-        side: "X"
+        side: "X",
+        coordinates: {
+          x: 1,
+          y: 1
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -397,8 +433,10 @@ describe('Player placed move command', function() {
         type: "PlayerPlacedMove",
         user: "Gulli",
         side: "O",
-        x: 2,
-        y: 0
+        coordinates: {
+          x: 2,
+          y: 0
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -406,8 +444,10 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 1,
-        y: 0,
+        coordinates: {
+          x: 1,
+          y: 0
+        },
         side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -417,8 +457,10 @@ describe('Player placed move command', function() {
         type: "PlayerPlacedMove",
         user: "Gulli",
         side: "O",
-        x: 1,
-        y: 2
+        coordinates: {
+          x: 1,
+          y: 2
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -426,8 +468,10 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 0,
-        y: 1,
+        coordinates: {
+          x: 0,
+          y: 1
+        },
         side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"
@@ -437,8 +481,10 @@ describe('Player placed move command', function() {
         type: "PlayerPlacedMove",
         user: "Gulli",
         side: "O",
-        x: 2,
-        y: 1
+        coordinates: {
+          x: 2,
+          y: 1
+        }
       },
       timeStamp: "2015.12.02T12:30:44"
     }, {
@@ -446,8 +492,10 @@ describe('Player placed move command', function() {
       event: {
         type: "PlayerPlacedMove",
         user: "Grimur",
-        x: 2,
-        y: 2,
+        coordinates: {
+          x: 2,
+          y: 2
+        },
         side: "X"
       },
       timeStamp: "2015.12.02T12:30:44"

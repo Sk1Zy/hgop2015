@@ -11,10 +11,11 @@ module.exports = function(store) {
     executeCommand: function(req, res) {
       try {
         var context = boundedContext(store, tictactoeHandler);
-
         context.handleCommand(req.body).then(function(result) {
+          console.log('results', result);
           res.json(result);
         }, function(err) {
+          console.warn(err);
           res.json(err);
         });
       } catch (e) {
