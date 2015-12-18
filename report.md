@@ -29,3 +29,51 @@ NPM getur haldið utan um bæði NodeJS pakka og pakka sem keyra í vöfrum en b
 Load testið keyrði oftast á sirka 4.6 sekúndum samkvæmt mocha. Hinsvegar virtist mocha vera mislengi að keyra prófið upp og því gat ég ekki stillt tímann á 5 sekúndur. Það keyrði yfirleitt í fyrsta sinn á 5 sekúndum en byrjaði að klikka eftir það. Ég gat keyrt prófið 2-3 sinnum ef ég setti timeout í 7 sekúndur og það keyrir fínt á jenkins með timeoutið sett í 7 sekúndur þannig ég hélt mig við það.
 
 Varðandi spurninguna þá keyra prófin í seríu vegna þess að for loopan er ekki asynchronous. Það er hægt að nota async libraryið til þess að keyra prófin asynchronously en við erum ekki að gera það í þessum kúrs og það myndi örugglega fokka eitthvað upp gamehistory að blanda mörgum leikjum saman.
+
+## Wrapup
+Hér koma öll script sem e´g var með í jenkins
+
+### Commit Stage
+```
+  export PATH="/usr/local/bin:$PATH"
+  npm install;bower install
+```
+```
+  export DISPLAY=:0
+  export PATH="/usr/local/bin:$PATH"
+  ./dockerbuild.sh
+  ```
+
+### Acceptance Stage
+```
+  export PATH="/usr/local/bin:$PATH"
+  npm install;bower install
+```
+```
+  export DISPLAY=:0
+  export PATH="/usr/local/bin:$PATH"
+  ./dockerbuild.sh
+```
+```
+  export PATH="/usr/local/bin:$PATH"
+  ./deploy.sh
+```
+```
+  export PATH="/usr/local/bin:$PATH"
+  if [ $GIT_BRANCH = "origin/master" ]; then
+      export ACCEPTANCE_URL=http://10.0.0.11:8080;
+      grunt mochaTest:acceptance;
+  fi
+```
+### Load Test Stage
+```
+  export PATH="/usr/local/bin:$PATH"
+  npm install;bower install
+```
+```
+  export PATH="/usr/local/bin:$PATH"
+  if [ $GIT_BRANCH = "origin/master" ]; then
+      export ACCEPTANCE_URL=http://10.0.0.11:8080;
+      grunt mochaTest:load;
+  fi
+  ```
