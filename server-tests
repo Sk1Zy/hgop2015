@@ -1,10 +1,14 @@
 
 [0m[0m
-Express server listening on 9000, in test mode
+Express server listening on 9000, in development mode
 [0m  GET /api/gameHistory[0m
+results [ { id: '1234',
+    gameId: '999',
+    event: { type: 'GameCreated', user: 'Gulli' },
+    timeStamp: '2014-12-02T11:29:29' } ]
 [90mPOST /api/createGame [32m200 [90m14ms - 110b[0m
-[90mGET /api/gameHistory/999 [32m200 [90m7ms - 110b[0m
-[2K[0G  [32m  ✓[0m[90m should respond with JSON array with created events for game [0m[31m(90ms)[0m
+[90mGET /api/gameHistory/999 [32m200 [90m3ms - 110b[0m
+[2K[0G  [32m  ✓[0m[90m should respond with JSON array with created events for game [0m[31m(91ms)[0m
 
 [0m  In memory store[0m
 [2K[0G  [32m  ✓[0m[90m Should return empty array for unknown id [0m
@@ -16,10 +20,6 @@ Express server listening on 9000, in test mode
 [2K[0G  [32m  ✓[0m[90m should route command to instantiated tictactoe game with event stream from store and return generated events, using mock style tests. [0m
 
 [0m  create game command[0m
-[ { id: '1234',
-    gameId: '999',
-    event: { type: 'GameCreated', user: 'Gulli' },
-    timeStamp: '2015.12.02T11:29:44' } ]
 [2K[0G  [32m  ✓[0m[90m should create game [0m
 [2K[0G  [32m  ✓[0m[90m should create game with another user another time [0m
 
@@ -28,12 +28,27 @@ Express server listening on 9000, in test mode
 [2K[0G  [32m  ✓[0m[90m should reject joining of a non-existing game [0m
 
 [0m  Player placed move command[0m
+[ 'O', null, 'X' ]
+[ 'X', 'O', null ]
+[ null, null, 'O' ]
 [2K[0G  [32m  ✓[0m[90m player can win diagonally [0m
+[ 'X', 'X', 'O' ]
+[ null, 'O', null ]
+[ 'O', null, null ]
 [2K[0G  [32m  ✓[0m[90m player can win diagonally against [0m
+[ 'O', 'O', 'O' ]
+[ 'X', 'X', null ]
+[ null, null, null ]
 [2K[0G  [32m  ✓[0m[90m player can win vertically row 1 [0m
+[ 'O', null, null ]
+[ 'O', 'X', null ]
+[ 'O', 'X', null ]
 [2K[0G  [32m  ✓[0m[90m player can win horizontally row 1 [0m
+[ 'O', 'X', 'O' ]
+[ 'X', 'X', 'O' ]
+[ 'O', 'O', 'X' ]
 [2K[0G  [32m  ✓[0m[90m there can be a draw [0m
 
 
-[92m [0m[32m 15 passing[0m[90m (126ms)[0m
+[92m [0m[32m 15 passing[0m[90m (137ms)[0m
 
